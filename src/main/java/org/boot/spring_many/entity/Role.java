@@ -19,6 +19,8 @@ public class Role {
 
     private String name;
 
+    private String description;
+
     @ManyToMany
     @JoinTable(
             name = "role_permissions",
