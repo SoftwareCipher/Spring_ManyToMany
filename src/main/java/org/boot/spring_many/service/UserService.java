@@ -1,5 +1,6 @@
 package org.boot.spring_many.service;
 
+import jakarta.persistence.Table;
 import lombok.RequiredArgsConstructor;
 import org.boot.spring_many.dto.UserDTO;
 import org.boot.spring_many.entity.Role;
@@ -42,6 +43,11 @@ public class UserService {
         return users;
     }
 
-    public void getUsersByRole(String role) {
+    @Transactional
+    public List<UserDTO> getUsersByRole(String roleName) {
+        return userRepository.findAllUsersByRoleName(roleName)
+                .stream()
+                .map(UserDTO::new)
+                .toList();
     }
 }

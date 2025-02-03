@@ -34,7 +34,6 @@ public class UserController {
     @GetMapping("/roles/{role}")
     public ResponseEntity<List<UserDTO>> getRoles(@PathVariable String role) {
         Logger.info("get role: " + role);
-        userService.getUsersByRole(role);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.ok( userService.getUsersByRole(role));
     }
 }
