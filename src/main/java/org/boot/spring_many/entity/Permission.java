@@ -12,8 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class Permission {
     @Id
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "permissions_seq_gen")
+//    @SequenceGenerator(name = "permissions_seq_gen", sequenceName = "global_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(nullable = false, unique = true)
     private String name;
