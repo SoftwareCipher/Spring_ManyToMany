@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.TABLE)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE)
 //    @SequenceGenerator(name = "global_seq_gen", sequenceName = "global_sequence", allocationSize = 1)
     private int id;
 
