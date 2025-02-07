@@ -12,6 +12,7 @@ import org.boot.spring_many.entity.User;
 public class UserDTO {
     private int id;
     private String name;
+    //TODO
     private String password;
     private RoleDTO role;
 

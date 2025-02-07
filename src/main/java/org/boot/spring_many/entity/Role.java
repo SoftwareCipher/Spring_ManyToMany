@@ -15,14 +15,13 @@ import java.util.Set;
 @Table(name = "roles")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @SequenceGenerator(name = "roles_seq_gen", sequenceName = "global_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_seq_gen")
+    @SequenceGenerator(name = "roles_seq_gen", sequenceName = "global_sequence", allocationSize = 1)
     private int id;
 
     private String name;
 
     @ManyToMany
-    @JsonIgnore
     @JoinTable(
             name = "role_permissions",
             joinColumns = @JoinColumn(name = "role_id"),

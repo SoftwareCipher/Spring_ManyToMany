@@ -18,10 +18,10 @@ VALUES ((select r.id from roles r where r.name = 'ADMIN'),
         (select p.id from permissions p where p.name = 'READ'));
 
 
-INSERT INTO users (username, password, role_id)
-SELECT
-    'user' || generate_series(1, 100),
-    md5(random()::text),
-    CASE WHEN random() > 0.5 THEN (select r.id from roles r where r.name = 'ADMIN')
-        ELSE (select r.id from roles r where r.name = 'USER') END
-FROM generate_series(1, 100);
+-- INSERT INTO users (username, password, role_id)
+-- SELECT
+--     'user' || generate_series(1, 100),
+--     md5(random()::text),
+--     CASE WHEN random() > 0.5 THEN (select r.id from roles r where r.name = 'ADMIN')
+--         ELSE (select r.id from roles r where r.name = 'USER') END
+-- FROM generate_series(1, 100);

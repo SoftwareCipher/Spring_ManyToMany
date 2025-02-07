@@ -22,7 +22,7 @@ public class UserService {
 
     @Transactional
     public void saveWithRole(UserDTO dto) {
-        Role role = roleRepository.findByName(dto.getRole().getName())
+        Role role = roleRepository.findByName("USER")
                 .orElseThrow(() -> new NullPointerException("Role not found with name: " + dto.getRole().getName()));
         User user = new User();
         user.setUsername(dto.getName());
